@@ -24,6 +24,6 @@ public class SpringEmailApplication {
 //    }
     @EventListener(ApplicationReadyEvent.class)
     public void sendMail() throws MessagingException {
-        senderService.sendEmailWithAttachment("Gönderim yapılacak mail","This is Email Body with Attachment...","This Email has Attachment","C:\\Users\\Murat\\Desktop\\Screenshot_5");
+        senderService.sendEmailWithAttachment("Gönderim yapılacak mail","This is Email Body with Attachment...","This Email has Attachment","C:\\Users\\Murat\\Desktop\\Screenshot_5.jpg");
     }
 }
