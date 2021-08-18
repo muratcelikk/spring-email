@@ -18,6 +18,6 @@ public class SpringEmailApplication {
 
     @EventListener(ApplicationReadyEvent.class)
     public void sendMail() {
-        senderService.sendEmail("gönderim yapılacak mail adresi", "This is subject", "This is Body to Email");
+        senderService.sendEmail("muratcelik11@gmail.com", "This is Body to Email", "This is subject");
     }
 }
