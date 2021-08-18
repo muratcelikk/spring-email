@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
+import javax.mail.MessagingException;
+
 @SpringBootApplication
 @AllArgsConstructor
 public class SpringEmailApplication {
@@ -16,8 +18,12 @@ public class SpringEmailApplication {
         SpringApplication.run(SpringEmailApplication.class, args);
     }
 
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void sendMail() {
+//        senderService.sendEmail("gönderim yapılacak mail adresi", "This is Body to Email", "This is subject");
+//    }
     @EventListener(ApplicationReadyEvent.class)
-    public void sendMail() {
-        senderService.sendEmail("gönderim yapılacak mail adresi", "This is Body to Email", "This is subject");
+    public void sendMail() throws MessagingException {
+        senderService.sendEmailWithAttachment("Gönderim yapılacak mail","This is Email Body with Attachment...","This Email has Attachment","C:\\Users\\Murat\\Desktop\\Screenshot_5");
     }
 }
